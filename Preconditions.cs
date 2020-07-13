@@ -27,6 +27,14 @@ namespace Preconditions
         {
             if (input <= 0) throw new ArgumentOutOfRangeException(parameterName);
         }
+        
+        /// <summary>
+        /// Throws exception if input is less than or equal to zero
+        /// </summary>
+        public static void CheckPositive(double input, string parameterName)
+        {
+            if (input <= 0) throw new ArgumentOutOfRangeException(parameterName);
+        }
 
         /// <summary>
         /// Throws exception if input is less than zero
