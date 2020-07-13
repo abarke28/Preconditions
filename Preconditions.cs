@@ -21,6 +21,14 @@ namespace Preconditions
         }
 
         /// <summary>
+        /// Throws exception if input is 0
+        /// </summary>
+        public static void CheckNotZero(int input, string parameterName)
+        {
+            if (input == 0) throw new ArgumentException(parameterName);
+        }
+
+        /// <summary>
         /// Throws exception if input is less than or equal to zero
         /// </summary>
         public static void CheckPositive(int input, string parameterName)
