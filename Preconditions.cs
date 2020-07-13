@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Preconditions
 {
-    public static class Preconditions
+    public static class Preconditions<T>
     {
         /// <summary>
         /// Throws exception if string is null or empty
@@ -64,6 +66,28 @@ namespace Preconditions
             }
 
             if (input >= upperBound || input < lowerBound) throw new ArgumentOutOfRangeException(parameterName);
+        }
+
+
+        /// <summary>
+        /// Throws excpetion if input is null
+        /// </summary>
+        public static void CheckNotNull(T input, string parameterName)
+        {
+            if (input == null) throw new ArgumentNullException(parameterName);
+        }
+
+        /// <summary>
+        /// Throws excpetion if input contains duplicates
+        /// </summary>
+        public static void CheckDistinct(IEnumerable<T> input, string parameterName)
+        {
+            var hs = new HashSet<T>();
+
+            foreach (var e in input)
+            {
+                if (!hs.Add(e)) throw new ArgumentException(parameterName);
+            }
         }
     }
 }
