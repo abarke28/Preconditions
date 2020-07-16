@@ -151,5 +151,13 @@ namespace Preconditions
         {
             if (!(input < threshold)) throw new ArgumentOutOfRangeException(parameterName);
         }
+
+        /// <summary>
+        /// Throws exception if input is an empty collection
+        /// </summary>
+        public static void CheckNotEmpty(IEnumerable<T> input, string parameterName)
+        {
+            if (input.Count() == 0) throw new ArgumentException(parameterName);
+        }
     }
 }
