@@ -89,9 +89,12 @@ namespace Preconditions
             }
         }
 
+        /// <summary>
+        /// Throws exception if input does not contain target
+        /// </summary>
         public static void CheckContains(IEnumerable<T> input, T target, string parameterName)
         {
-
+            if (!input.Contains(target)) throw new ArgumentException(parameterName);
         }
     }
 }
