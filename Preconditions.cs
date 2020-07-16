@@ -68,7 +68,6 @@ namespace Preconditions
             if (input >= upperBound || input < lowerBound) throw new ArgumentOutOfRangeException(parameterName);
         }
 
-
         /// <summary>
         /// Throws excpetion if input is null
         /// </summary>
@@ -88,6 +87,11 @@ namespace Preconditions
             {
                 if (!hs.Add(e)) throw new ArgumentException(parameterName);
             }
+        }
+
+        public static void CheckContains(IEnumerable<T> input, T target, string parameterName)
+        {
+
         }
     }
 }
