@@ -104,5 +104,13 @@ namespace Preconditions
         {
             if (string.IsNullOrWhiteSpace(input)) throw new ArgumentException(parameterName);
         }
+
+        /// <summary>
+        /// Throws exception if input is false
+        /// </summary>
+        public static void CheckTrue(bool input, string parameterName)
+        {
+            if (input != true) throw new ArgumentException(parameterName);
+        }
     }
 }
