@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Preconditions
@@ -133,6 +134,22 @@ namespace Preconditions
         public static void CheckFalse(bool input, string parameterName)
         {
             if (input != false) throw new ArgumentException(parameterName);
+        }
+
+        /// <summary>
+        /// Throws exception if input is not greater than threshold
+        /// </summary>
+        public static void CheckGreaterThan(int input, int threshold, string parameterName)
+        {
+            if (!(input > threshold)) throw new ArgumentOutOfRangeException(parameterName);
+        }
+
+        /// <summary>
+        /// Throws exception if input is not less than threshold
+        /// </summary>
+        public static void CheckLessThan(int input, int threshold, string parameterName)
+        {
+            if (!(input < threshold)) throw new ArgumentOutOfRangeException(parameterName);
         }
     }
 }
