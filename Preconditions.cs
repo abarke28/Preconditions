@@ -69,6 +69,20 @@ namespace Preconditions
         }
 
         /// <summary>
+        /// Throws exception if input is in supplied ranage
+        /// </summary>
+        /// <param name="inclusive">Specifies if range is inclusive (default) or exclusive</param>
+        public static void CheckNotInRange(int input, int lowerBound, int upperBound, string parameterName, bool inclusive = true)
+        {
+            if (inclusive)
+            {
+                if (input >= lowerBound || input <= upperBound) throw new ArgumentOutOfRangeException(parameterName);
+            }
+
+            if (input > lowerBound || input < lowerBound) throw new ArgumentOutOfRangeException(parameterName);
+        }
+
+        /// <summary>
         /// Throws excpetion if input is null
         /// </summary>
         public static void CheckNotNull(T input, string parameterName)
