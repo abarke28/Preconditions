@@ -96,5 +96,13 @@ namespace Preconditions
         {
             if (!input.Contains(target)) throw new ArgumentException(parameterName);
         }
+
+        /// <summary>
+        /// Throws exception if input is null or whitespace
+        /// </summary>
+        public static void CheckNotNullOrWhiteSpace(string input, string parameterName)
+        {
+            if (string.IsNullOrWhiteSpace(input)) throw new ArgumentException(parameterName);
+        }
     }
 }
