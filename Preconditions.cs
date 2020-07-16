@@ -112,5 +112,13 @@ namespace Preconditions
         {
             if (input != true) throw new ArgumentException(parameterName);
         }
+
+        /// <summary>
+        /// Throws exception if input is true
+        /// </summary>
+        public static void CheckFalse(bool input, string parameterName)
+        {
+            if (input != false) throw new ArgumentException(parameterName);
+        }
     }
 }
