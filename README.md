@@ -5,4 +5,4 @@ Methods for validation
 Generic + Typed
 
 Set A - Throws Exceptions
-Set B - Returns null/default/logical value
+Set B - Returns null/default/logical value - to be added
