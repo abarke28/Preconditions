@@ -8,14 +8,6 @@ namespace Preconditions
     public class PreconditionsSoft<T>
     {
         /// <summary>
-        /// Throws exception if string is null or empty
-        /// </summary>
-        public static void CheckNotNullOrEmpty(string input, string parameterName)
-        {
-            if (string.IsNullOrEmpty(input)) throw new ArgumentException(parameterName);
-        }
-
-        /// <summary>
         /// Throws exception if string is null
         /// </summary>
         public static void CheckNotNull(string input, string parameterName)
