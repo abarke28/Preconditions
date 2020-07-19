@@ -119,7 +119,7 @@ namespace Preconditions
         {
             foreach (var i in input)
             {
-                if (i.Equals(input)) throw new ArgumentException(parameterName);
+                if (i.Equals(target)) throw new ArgumentException(parameterName);
             }
         }
 
