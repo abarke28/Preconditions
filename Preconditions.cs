@@ -113,6 +113,17 @@ namespace Preconditions
         }
 
         /// <summary>
+        /// Throws exception if input does contain target
+        /// </summary>
+        public static void CheckDoesNotContain(IEnumerable<T> input, T target, string parameterName)
+        {
+            foreach (var i in input)
+            {
+                if (i.Equals(input)) throw new ArgumentException(parameterName);
+            }
+        }
+
+        /// <summary>
         /// Throws exception if input is null or whitespace
         /// </summary>
         public static void CheckNotNullOrWhiteSpace(string input, string parameterName)
