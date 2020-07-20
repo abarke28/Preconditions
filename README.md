@@ -1,8 +1,6 @@
 # Preconditions
-Preconditions for Safety
-Methods for validation
+
+Clean validation methods for argument validation & corner case handling
 
 Generic + Typed
 
-Set A - Throws Exceptions
-Set B - Returns null/default/logical value - to be added
