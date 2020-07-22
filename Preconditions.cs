@@ -171,13 +171,20 @@ namespace Preconditions
             if (input.Count() == 0) throw new ArgumentException(parameterName);
         }
 
-
         /// <summary>
         /// Throws exception if input is not equal to target
         /// </summary>
         public static void CheckEqual(T input, T target, string targetName)
         {
             if (!input.Equals(target)) throw new ArgumentException(targetName);
+        }
+
+        /// <summary>
+        /// Throws exception if input is equal to target
+        /// </summary>
+        public static void CheckNotEqual(T input, T target, string targetName)
+        {
+            if (input.Equals(target)) throw new ArgumentException(targetName);
         }
     }
 }
