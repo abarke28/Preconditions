@@ -188,12 +188,19 @@ namespace Preconditions
         }
 
         /// <summary>
-        /// Orders source
+        /// Orders source ascending
         /// </summary>
-        /// <param name="source"></param>
         public static void SortAscending(IEnumerable<T> source)
         {
             source.OrderBy(i => i);
+        }
+
+        /// <summary>
+        /// Orders source descending
+        /// </summary>
+        public static void SortDescending(IEnumerable<T> source)
+        {
+            source.OrderByDescending(i => i);
         }
     }
 }
