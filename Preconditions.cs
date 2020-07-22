@@ -170,5 +170,11 @@ namespace Preconditions
         {
             if (input.Count() == 0) throw new ArgumentException(parameterName);
         }
+
+
+        public static void CheckEqual(T source, T target, string targetName)
+        {
+            if (!source.Equals(target)) throw new ArgumentException(targetName);
+        }
     }
 }
