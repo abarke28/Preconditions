@@ -186,5 +186,14 @@ namespace Preconditions
         {
             if (input.Equals(target)) throw new ArgumentException(targetName);
         }
+
+        /// <summary>
+        /// Orders source
+        /// </summary>
+        /// <param name="source"></param>
+        public static void SortAscending(IEnumerable<T> source)
+        {
+            source.OrderBy(i => i);
+        }
     }
 }
