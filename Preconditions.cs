@@ -172,9 +172,12 @@ namespace Preconditions
         }
 
 
-        public static void CheckEqual(T source, T target, string targetName)
+        /// <summary>
+        /// Throws exception if input is not equal to target
+        /// </summary>
+        public static void CheckEqual(T input, T target, string targetName)
         {
-            if (!source.Equals(target)) throw new ArgumentException(targetName);
+            if (!input.Equals(target)) throw new ArgumentException(targetName);
         }
     }
 }
