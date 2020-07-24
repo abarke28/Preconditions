@@ -203,15 +203,18 @@ namespace Preconditions
             source.OrderByDescending(i => i);
         }
 
-        public static void RemoveDuplicates(IEnumerable<T> source)
+        /// <summary>
+        /// Removes duplicates from source
+        /// </summary>
+        public static IEnumerable<T> RemoveDuplicates(IEnumerable<T> source)
         {
             var hs = new HashSet<T>();
 
             foreach (var i in source)
             {
-                if (!hs.Add(i))
+                if (hs.Add(i))
                 {
-                    
+                    yield return i;
                 }
             }
         }
