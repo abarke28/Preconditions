@@ -187,6 +187,11 @@ namespace Preconditions
             if (input.Equals(target)) throw new ArgumentException(targetName);
         }
 
+        public static void CheckDelegateNotEmpty(Delegate del, string parameterName)
+        {
+            if (del == null) throw new ArgumentNullException(parameterName);
+        }
+
         /// <summary>
         /// Orders source ascending
         /// </summary>
