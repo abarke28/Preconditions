@@ -187,6 +187,9 @@ namespace Preconditions
             if (input.Equals(target)) throw new ArgumentException(targetName);
         }
 
+        /// <summary>
+        /// Throws exception if delegate has no subscribers
+        /// </summary>
         public static void CheckDelegateNotEmpty(Delegate del, string parameterName)
         {
             if (del == null) throw new ArgumentNullException(parameterName);
